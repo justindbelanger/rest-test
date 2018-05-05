@@ -24,6 +24,7 @@
   []
     (let [target-dir "target"]
       (comp
+       (repl)
         (serve :handler 'rest-test.core/routes
                :resource-root target-dir
                :reload true
