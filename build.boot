@@ -24,7 +24,7 @@
   []
     (let [target-dir "target"]
       (comp
-        (serve :handler 'vue-server.core/routes
+        (serve :handler 'rest-test.core/routes
                :resource-root target-dir
                :reload true
                :httpkit true
