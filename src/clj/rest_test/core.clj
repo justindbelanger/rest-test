@@ -4,8 +4,7 @@
             [compojure.handler :refer [site]]
             [org.httpkit.server :refer [run-server]]))
 
-;; (defonce ^:dynamic cats (atom {:name "Java"}))
-(def ^:dynamic cats (atom {:name "Java"}))
+(defonce cats (atom {:name "Java"}))
 
 (defn get-cats []
   (pr-str @cats))

@@ -17,18 +17,10 @@
                  [adzerk/boot-test "1.2.0"]
                  [http-kit "2.2.0"]])
 
-(require '[pandeiro.boot-http :refer [serve]])
-
 (deftask dev
   "Launch immediate feedback dev environment"
   []
-    (let [target-dir "target"]
       (comp
        (repl)
-        (serve :handler 'rest-test.core/routes
-               :resource-root target-dir
-               :reload true
-               :httpkit true
-               :port 8100)
         (watch)
-        (target :dir #{target-dir}))))
+        (target :dir #{"target"})))
